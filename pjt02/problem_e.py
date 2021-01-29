@@ -1,9 +1,9 @@
+import os
 import requests
 from tmdb import URLMaker
 from pprint import pprint
 
-
-key = '5484e9c8428f08f7e60d1a972a7f7f35'
+key = os.environ.get('TMDB_KEY')
 maker= URLMaker(key)
 url = maker.get_url('movie', 'popular', region = 'KR', language = 'ko')
 response = requests.get(url)

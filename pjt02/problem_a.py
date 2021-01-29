@@ -1,6 +1,7 @@
+import os
 import requests
 from tmdb import URLMaker
-import os
+
 def popular_count():
 
     key = os.environ.get('TMDB_KEY')

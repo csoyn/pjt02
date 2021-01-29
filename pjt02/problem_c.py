@@ -1,9 +1,12 @@
+import os
 import requests
 from tmdb import URLMaker
 from pprint import pprint
- 
+
+key = os.environ.get('TMDB_KEY')
+
 def ranking():
-    maker  = URLMaker('5484e9c8428f08f7e60d1a972a7f7f35')
+    maker  = URLMaker('key')
     url = maker.get_url('movie', 'popular', region = 'KR', language = 'ko')
     response = requests.get(url)
     popular = response.json()
